@@ -136,4 +136,4 @@ Test the new uploader.
 
 1. Start Strapi dev server: `npm run develop`.
 
-2. Open [Strapi media library v3](http://localhost:1337/admin/plugins/upload) or [Strapi media library v4](http://localhost:1337/admin/settings/media-library) in a browser and upload a test image.
+2. Open [Strapi media library v4](http://localhost:1337/admin/settings/media-library) in a browser and upload a test image.
