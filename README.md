@@ -42,7 +42,6 @@ After successful installation your package.json file will have a code:
 ```
 "dependencies": {
     ...
-    "strapi": "^4.7.0",
     "provider-upload-pixelbin": "^1.0.1",
     ...
   },
