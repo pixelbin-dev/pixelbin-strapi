@@ -1,0 +1,30 @@
+{
+  "name": "provider-upload-pixelbin",
+  "version": "1.0.1",
+  "description": "Pixelbin provider for strapi upload",
+  "keywords": [
+    "upload",
+    "cloudinary",
+    "strapi"
+  ],
+  "directories": {
+    "src": "./src"
+  },
+  "main": "./src",
+  "dependencies": {
+    "@pixelbin/admin": "^3.7.0"
+  },
+  "strapi": {
+    "isProvider": true
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "author": "Umesh Palival",
+  "license": "ISC"
+}
+
