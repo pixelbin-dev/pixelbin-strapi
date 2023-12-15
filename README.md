@@ -4,7 +4,7 @@ works with Strapi 4.
 
 ---
 
-Yandex.Cloud: <https://www.pixelbin.io/>
+PixelBin.io: <https://www.pixelbin.io/>
 
 Docs: <https://www.pixelbin.io/docs/>
 
