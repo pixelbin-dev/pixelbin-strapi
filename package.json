@@ -4,7 +4,7 @@
   "description": "Pixelbin provider for strapi upload",
   "keywords": [
     "upload",
-    "cloudinary",
+    "pixelbin",
     "strapi"
   ],
   "directories": {
