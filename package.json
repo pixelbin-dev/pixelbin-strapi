@@ -1,5 +1,5 @@
 {
-  "name": "@pixelbin/provider-upload-pixelbin",
+  "name": "@pixelbin/strapi-provider-upload",
   "version": "1.0.0",
   "description": "Pixelbin provider for strapi upload",
   "private": false,

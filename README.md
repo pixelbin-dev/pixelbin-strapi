@@ -14,7 +14,7 @@ Pre-install: create Pixelbin.io account.
 
 ```
 # using npm
-npm install @pixelbin/provider-upload-pixelbin --save
+npm install @pixelbin/strapi-provider-upload --save
 ```
 
 ## Parameters
@@ -33,7 +33,7 @@ After successfully creating the project stop the dev server: `CTRL + C`.
 
 :one:
 
-Install upload plugin: `npm install @pixelbin/provider-upload-pixelbin --save`.
+Install upload plugin: `npm install @pixelbin/strapi-provider-upload --save`.
 
 NOTE: Be sure that you are in a folder with your Strapi project: `cd strapi-pixelbin-cloud-project`.
 
@@ -42,7 +42,7 @@ After successful installation your package.json file will have a code:
 ```
 "dependencies": {
     ...
-    "@pixelbin/provider-upload-pixelbin": "^1.0.0",
+    "@pixelbin/strapi-provider-upload": "^1.0.0",
     ...
   },
 ```
@@ -59,7 +59,7 @@ Go to code editor to your project folder and create config file for your bucket:
 module.exports = ({ env }) => ({
   upload: {
     config: {
-      provider: "@pixelbin/provider-upload-pixelbin",
+      provider: "@pixelbin/strapi-provider-upload",
       providerOptions: {
         apiSecret: env("PIXELBIN_SECRET"),
       },
