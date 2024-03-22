@@ -1,6 +1,6 @@
 {
   "name": "@pixelbin/strapi-provider-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pixelbin provider for strapi upload",
   "private": false,
   "keywords": [
@@ -13,7 +13,7 @@
   },
   "main": "./src",
   "dependencies": {
-    "@pixelbin/admin": "^3.7.0"
+    "@pixelbin/admin": "^3.8.2"
   },
   "strapi": {
     "isProvider": true

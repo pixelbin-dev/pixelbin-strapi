@@ -42,7 +42,7 @@ After successful installation your package.json file will have a code:
 ```
 "dependencies": {
     ...
-    "@pixelbin/strapi-provider-upload": "^1.0.0",
+    "@pixelbin/strapi-provider-upload": "^1.0.1",
     ...
   },
 ```
