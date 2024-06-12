@@ -5,7 +5,8 @@ module.exports = {
     const { PixelbinConfig, PixelbinClient } = require("@pixelbin/admin");
     const pixelbinConfig = new PixelbinConfig(config);
     const pixelbinClient = new PixelbinClient(pixelbinConfig);
-    const defaultPath = config.folderName || "strapi-images";
+    const DEFAULT_PATH = "strapi-images";
+    const folderPath = config.folderName || DEFAULT_PATH;
     
     // Helper function to extract the data after 'original/'
     const extractData = (url) => {
@@ -35,7 +36,7 @@ module.exports = {
           options: {
             originalFilename: file.name,
           },
-          path: defaultPath,
+          path: folderPath,
           name: file.name,
           overwrite: true,
           ...customParams,
