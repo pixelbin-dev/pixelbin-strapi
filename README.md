@@ -22,6 +22,7 @@ npm install @pixelbin/strapi-provider-upload --save
 | Parameter  | Description | Example |
 | ------------- | ------------- | ------------- |
 | PIXELBIN_SECRET | api secret | `a89a57f1-09f3-4z56-a282-4a746ce6cb6e` |
+| folderName | Default path | "strapi-images" |
 
 ## Example
 
@@ -42,7 +43,7 @@ After successful installation your package.json file will have a code:
 ```
 "dependencies": {
     ...
-    "@pixelbin/strapi-provider-upload": "^1.0.1",
+    "@pixelbin/strapi-provider-upload": "^1.0.2",
     ...
   },
 ```
@@ -62,6 +63,7 @@ module.exports = ({ env }) => ({
       provider: "@pixelbin/strapi-provider-upload",
       providerOptions: {
         apiSecret: env("PIXELBIN_SECRET"),
+        folderName: "strapi-images", //you can changes folder name anything you want
       },
       actionOptions: {
         upload: {},
