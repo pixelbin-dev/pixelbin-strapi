@@ -5,7 +5,8 @@ module.exports = {
     const { PixelbinConfig, PixelbinClient } = require("@pixelbin/admin");
     const pixelbinConfig = new PixelbinConfig(config);
     const pixelbinClient = new PixelbinClient(pixelbinConfig);
-
+    const defaultPath = config.folderName || "strapi-images";
+    
     return {
       async upload(file, customParams = {}) {
         // Ensure necessary properties are defined
@@ -25,6 +26,8 @@ module.exports = {
           options: {
             originalFilename: file.name,
           },
+          path: defaultPath,
+          name: file.name,
           overwrite: true,
           ...customParams,
         };
@@ -53,7 +56,7 @@ module.exports = {
         }
 
         const response = await pixelbinClient.assets.deleteFile({
-          fileId: `${file.hash}.${file.ext}`,
+          fileId: `${defaultPath}/${file.name}`,
           ...customParams,
         });
 
