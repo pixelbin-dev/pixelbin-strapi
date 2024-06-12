@@ -7,6 +7,15 @@ module.exports = {
     const pixelbinClient = new PixelbinClient(pixelbinConfig);
     const defaultPath = config.folderName || "strapi-images";
     
+    // Helper function to extract the data after 'original/'
+    const extractData = (url) => {
+      const originalIndex = url.indexOf("original/");
+      if (originalIndex !== -1) {
+        return url.substring(originalIndex + "original/".length);
+      }
+      return null;
+    };
+
     return {
       async upload(file, customParams = {}) {
         // Ensure necessary properties are defined
@@ -45,18 +54,24 @@ module.exports = {
       },
 
       async delete(file, customParams = {}) {
-        const requiredProperties = ["hash", "ext"];
+        const requiredProperties = ["url"];
         if (
           !file ||
           !requiredProperties.every((prop) => file[prop] !== undefined)
         ) {
           throw new Error(
-            "Invalid file object. Make sure it has hash and ext properties for delete operation."
+            "Invalid file object. Make sure it has url property for delete operation."
           );
         }
 
+        // Extract the relevant part of the URL
+        const fileId = extractData(file.url);
+        if (!fileId) {
+          throw new Error("Invalid file URL. Unable to extract file ID.");
+        }
+
         const response = await pixelbinClient.assets.deleteFile({
-          fileId: `${defaultPath}/${file.name}`,
+          fileId: `${fileId}`,
           ...customParams,
         });
 
