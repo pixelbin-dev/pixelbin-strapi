@@ -1,8 +1,13 @@
 const { Readable } = require("stream");
+const packageJson = require('../package.json');
+
+const version = packageJson.version;
+
 
 module.exports = {
   init(config) {
     const { PixelbinConfig, PixelbinClient } = require("@pixelbin/admin");
+    config.integrationPlatform = `PixelbinioPlugin/${version} (Strapi)`;
     const pixelbinConfig = new PixelbinConfig(config);
     const pixelbinClient = new PixelbinClient(pixelbinConfig);
     const DEFAULT_PATH = "strapi-images";
